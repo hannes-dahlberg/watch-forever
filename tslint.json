@@ -1,0 +1,34 @@
+{
+    "defaultSeverity": "error",
+    "extends": "tslint:recommended",
+    "jsRules": {},
+    "rules": {
+        "max-line-length": {
+            "options": [
+                255
+            ]
+        },
+        "ordered-imports": true,
+        "no-shadowed-variable": false,
+        "no-console": false,
+        "variable-name": {
+            "options": [
+                "allow-leading-underscore"
+            ]
+        },
+        "strict-type-predicates": true,
+        "max-classes-per-file": false,
+        "object-literal-sort-keys": false
+    },
+    "rulesDirectory": [],
+    "include": [
+        "app/**/*.ts",
+        "spa/**/*.ts",
+        "shared/**/*.ts"
+    ],
+    "exclude": [
+        "app/**/*.spec.ts",
+        "spa/**/*.spec.ts",
+        "shared/**/*.spec.ts"
+    ]
+}
