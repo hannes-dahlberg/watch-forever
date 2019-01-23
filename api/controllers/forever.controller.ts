@@ -1,6 +1,7 @@
 import * as childProcess from "child_process";
 import { Request, RequestHandler, Response } from "express";
 const forever: any = require("forever"); // tslint:disable-line:no-var-requires
+import * as fs from "fs";
 import { ForeverDTO } from "../../shared/dto";
 
 export class ForeverController {
@@ -28,9 +29,22 @@ export class ForeverController {
         response.sendStatus(500);
         return;
       }
-      childProcess.exec(`forever start ${request.body.command}`, (error: any) => {
+      let command: string = "";
+      if (request.body.command.substr(request.body.command.length - 2, 2)) {
+        const foreverConfig = JSON.parse(fs.readFileSync(request.body.command, "utf8"));
+        Object.keys(foreverConfig).filter((key: string) => key !== "script").forEach((key: string) => {
+          command += ` --${key} ${foreverConfig[key]}`;
+        });
+        if (foreverConfig.script === undefined) { response.sendStatus(500); return; }
+        command += ` ${foreverConfig.script}`;
+      } else {
+        command = ` ${request.body.command}`;
+      }
+      childProcess.exec(`forever start${command}`, (error: any, stdOut: string) => {
         if (error) { console.log(error); response.sendStatus(500); return; }
-        response.sendStatus(200);
+        setTimeout(() => {
+          response.sendStatus(200);
+        }, 1000);
       });
     };
   }
