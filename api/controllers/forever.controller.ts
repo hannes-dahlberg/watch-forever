@@ -1,6 +1,6 @@
 import * as childProcess from "child_process";
 import { Request, RequestHandler, Response } from "express";
-import * as forever from "forever";
+const forever: any = require("forever"); // tslint:disable-line:no-var-requires
 import { ForeverDTO } from "../../shared/dto";
 
 export class ForeverController {
