@@ -1,7 +1,0 @@
-{
-  "uid": "timefly",
-  "watch": true,
-  "append": true,
-  "script": "build/server.js",
-  "sourceDir": "/var/www/applications/watch-forever/"
-}
