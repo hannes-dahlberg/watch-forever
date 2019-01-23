@@ -1,0 +1,6 @@
+{
+  "uid": "watch-forever",
+  "watch": true,
+  "script": "forever.js",
+  "sourceDir": "./"
+}

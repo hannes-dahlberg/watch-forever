@@ -5,14 +5,16 @@ import createPersistedState from "vuex-persistedstate";
 import { apiStore } from "./api.store";
 import { authStore } from "./auth.store";
 import { errorStore } from "./error.store";
+import { foreverStore } from "./forever.store";
 
 const MODULES = {
   api: apiStore,
   auth: authStore,
   error: errorStore,
+  forever: foreverStore,
 };
 
-export interface IAppState { }
+export interface IAppState { } // tslint:disable-line:no-empty-interface
 
 Vue.use(Vuex);
 

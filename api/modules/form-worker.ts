@@ -1,9 +1,10 @@
 import { container, HelperService } from "artos";
 import { NextFunction, Request, RequestHandler, Response } from "express";
+import { DTO } from "../../shared/dto";
 
 const helperService: HelperService = container.getService(HelperService, { useName: "service.helpers" });
 
-export type formWorker = (value: string) => any;
+export type formWorker = (value: string | number | boolean | null) => any;
 
 export class FormWorker {
   public static parseNumber = (decimals: number = 2, symbol: string | RegExp = "."): formWorker => (value: string): number | null => {

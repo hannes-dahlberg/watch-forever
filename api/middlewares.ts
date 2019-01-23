@@ -18,7 +18,7 @@ declare global {
 
 export const middleware = (middlewares: RequestHandler | RequestHandler[]) => (target: any, propertyKey: string, descriptor: PropertyDescriptor): void => {
     const originalMethod = descriptor.value;
-    descriptor.value = function (...args: any[]) {
+    descriptor.value = function(...args: any[]) {
         if (!(middlewares instanceof Array)) { middlewares = [middlewares]; }
         return [...middlewares, originalMethod.apply(this, ...args)];
     };

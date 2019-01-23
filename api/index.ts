@@ -1,13 +1,13 @@
 import { ConfigService, container, IApp } from "artos";
-import { router } from "./routes";
 import { UserModel } from "./models/user.model";
+import { router } from "./routes";
 
 container.set("model.user", UserModel);
 const configService: ConfigService = container.getService(ConfigService);
 
-let app: IApp = {
+const app: IApp = {
   domain: configService.get("API_HOST", "api.test.test"),
-  type: 'api',
+  type: "api",
   routes: router,
   corsConfig: `http://${configService.get("SPA_HOST", "*.test.test")}:${configService.get("PORT", "1234")}`,
 };
