@@ -1043,9 +1043,9 @@ arrify@^1.0.0:
   integrity sha1-iYUI2iIm84DfkEcoRWhJwVAaSw0=
 
 artos@^1.1.0:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/artos/-/artos-1.1.2.tgz#bb84e47b919174c2474156be3c1a0f5f3d977fb6"
-  integrity sha512-lGaOe/FO7KU4VcED7IO6AW6iFuwbNzwYHRFY2miPlQDW0GNpDH7b3/zM4plJ0TvrDd0Yiu4B1fDh5rzAHrnUVw==
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/artos/-/artos-1.1.3.tgz#6fd67c727fe96645d7e7a20432ca9bbd4ecb3609"
+  integrity sha512-oVcVJLonZZmdewNLCkJfUPs5EgbKWDPuibVGToGfcYgIaHINTWmZjOxU3oVouwAk2IJhLa8EAM7/EUxjs9brBg==
   dependencies:
     "@types/bcrypt" "^3.0.0"
     "@types/bluebird" "^3.5.24"
